@@ -1,0 +1,11 @@
+#!/bin/sh 
+USER="root"
+LOGNAME=$USER
+# export HOSTNAME=vexpress-a9
+export HOSTNAME=`cat /etc/sysconfig/HOSTNAME`
+export USER=root
+export HOME=root
+export PS1="[$USER@$HOSTNAME:\w]\#"
+PATH=/bin:/sbin:/usr/bin:/usr/sbin 
+LD_LIBRARY_PATH=/lib:/usr/lib:$LD_LIBRARY_PATH
+export PATH LD_LIBRARY_PATH
