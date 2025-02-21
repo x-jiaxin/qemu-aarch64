@@ -1,0 +1,61 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run qemu",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			},
+			"command": "./qemu_arm.sh",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"isBackground": false,
+			"detail": "qemu启动",
+		},
+		{
+			"label": "qemu-rootfs update",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			},
+			"command": "./rootfs_sync_to_qemu.sh",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"isBackground": false,
+			"detail": "qemu根目录更新",
+		},
+		{
+			"label": "rootfs update",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			},
+			"command": "./qemu_sync_to_rootfs.sh",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"isBackground": false,
+			"detail": "外置根目录更新",
+		},
+		{
+			"label": "Run",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			},
+			"command": "./main",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Debug Preprocess"
+			],
+			"isBackground": false,
+			"detail": "运行",
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "gdb",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/",
+			"environment": [],
+			"externalConsole": false,
+			// "preLaunchTask": "Build and run",
+			"MIMode": "gdb",
+			// "miDebuggerPath": "gdb",
+			"miDebuggerPath": "gdb-multiarch",
+			"miDebuggerServerAddress": "localhost:1234",
+			"internalConsoleOptions": "openOnSessionStart",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				},
+				{
+					"text": "set output-radix 16",
+					"description": "Set GDB output to hex",
+					"ignoreFailures": true
+				}
+			],
+		},
+	]
+}
