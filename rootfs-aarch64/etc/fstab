@@ -7,4 +7,3 @@ tmpfs   /dev            tmpfs   defaults        0       0
 tmpfs   /mnt            tmpfs   defaults        0       0
 var     /dev            tmpfs   defaults        0       0
 ramfs   /dev            ramfs   defaults        0       0
-

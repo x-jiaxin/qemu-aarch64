@@ -11,7 +11,21 @@
 				"group": "vm"
 			},
 			"isBackground": true,
-			"problemMatcher": []
+			"problemMatcher": [],
+			"detail": "启动qemu"
+		},
+		{
+			"label": "debug qemu",
+			"type": "shell",
+			"command": "./qemu_aarch64.sh -debug",
+			"presentation": {
+				"echo": true,
+				"clear": true,
+				"group": "vm"
+			},
+			"isBackground": true,
+			"problemMatcher": [],
+			"detail": "调试qemu"
 		},
 		{
 			"label": "qemu rootfs update",

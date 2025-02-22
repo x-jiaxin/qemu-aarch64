@@ -4,13 +4,13 @@
 
 static int __init hello_init(void)
 {
-	printk(KERN_ALERT "Hello, world\n");
+	printk(KERN_ALERT "xjx, Hello, world\n");
 	return 0;
 }
 
 static void __exit hello_exit(void)
 {
-	printk(KERN_ALERT "Goodbye, world\n");
+	printk(KERN_ALERT "xjx, Goodbye, world\n");
 }
 
 module_init(hello_init);

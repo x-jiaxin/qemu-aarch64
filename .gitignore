@@ -6,3 +6,4 @@ build/
 *.mod*
 *.sym*
 *.order*
+.ash_history

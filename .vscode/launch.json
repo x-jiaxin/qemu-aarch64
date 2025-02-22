@@ -13,7 +13,7 @@
 			"miDebuggerArgs": "-n",
 			"targetArchitecture": "arm64",
 			"externalConsole": false,
-			"preLaunchTask": "run qemu",
+			"preLaunchTask": "debug qemu",
 			"MIMode": "gdb",
 			"miDebuggerPath": "/usr/bin/gdb-multiarch",
 			"miDebuggerServerAddress": "localhost:1234",
