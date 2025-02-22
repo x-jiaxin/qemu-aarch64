@@ -2,38 +2,35 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "gdb",
+			"name": "qemu_debug",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/",
+			"program": "${workspaceFolder}/../linux/linux-6.13.2/vmlinux",
 			"args": [],
-			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}/",
+			"stopAtEntry": true,
+			"cwd": "${workspaceFolder}/../linux/linux-6.13.2/",
 			"environment": [],
+			"miDebuggerArgs": "-n",
+			"targetArchitecture": "arm64",
 			"externalConsole": false,
-			// "preLaunchTask": "Build and run",
+			"preLaunchTask": "run qemu",
 			"MIMode": "gdb",
-			// "miDebuggerPath": "gdb",
-			"miDebuggerPath": "gdb-multiarch",
+			"miDebuggerPath": "/usr/bin/gdb-multiarch",
 			"miDebuggerServerAddress": "localhost:1234",
 			"internalConsoleOptions": "openOnSessionStart",
 			"setupCommands": [
 				{
-					"description": "Enable pretty-printing for gdb",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
+					"text": "set architecture aarch64",
+					"description": "Set target architecture"
 				},
 				{
-					"description": "Set Disassembly Flavor to Intel",
-					"text": "-gdb-set disassembly-flavor intel",
-					"ignoreFailures": true
+					"text": "add-symbol-file ${workspaceFolder}/../linux/linux-6.13.2/vmlinux",
+					"description": "Load kernel symbols"
 				},
 				{
-					"text": "set output-radix 16",
-					"description": "Set GDB output to hex",
-					"ignoreFailures": true
+					"text": "b start_kernel"
 				}
-			],
+			]
 		},
 	]
 }

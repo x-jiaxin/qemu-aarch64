@@ -1,2 +1,8 @@
 *.o
 *.out
+build/
+*.cmd
+*.ko
+*.mod*
+*.sym*
+*.order*

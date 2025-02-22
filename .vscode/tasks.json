@@ -4,18 +4,17 @@
 		{
 			"label": "run qemu",
 			"type": "shell",
-			"options": {
-				"cwd": "${workspaceFolder}/"
+			"command": "./qemu_aarch64.sh",
+			"presentation": {
+				"echo": true,
+				"clear": true,
+				"group": "vm"
 			},
-			"command": "./qemu_arm.sh",
-			"problemMatcher": [
-				"$gcc"
-			],
-			"isBackground": false,
-			"detail": "qemu启动",
+			"isBackground": true,
+			"problemMatcher": []
 		},
 		{
-			"label": "qemu-rootfs update",
+			"label": "qemu rootfs update",
 			"type": "shell",
 			"options": {
 				"cwd": "${workspaceFolder}/"
@@ -28,7 +27,7 @@
 			"detail": "qemu根目录更新",
 		},
 		{
-			"label": "rootfs update",
+			"label": "rootfs update from qemu",
 			"type": "shell",
 			"options": {
 				"cwd": "${workspaceFolder}/"
@@ -40,22 +39,22 @@
 			"isBackground": false,
 			"detail": "外置根目录更新",
 		},
-		{
-			"label": "Run",
-			"type": "shell",
-			"options": {
-				"cwd": "${workspaceFolder}/"
-			},
-			"command": "./main",
-			"problemMatcher": [
-				"$gcc"
-			],
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Debug Preprocess"
-			],
-			"isBackground": false,
-			"detail": "运行",
-		}
+		// {
+		// 	"label": "Run",
+		// 	"type": "shell",
+		// 	"options": {
+		// 		"cwd": "${workspaceFolder}/"
+		// 	},
+		// 	"command": "./main",
+		// 	"problemMatcher": [
+		// 		"$gcc"
+		// 	],
+		// 	"dependsOrder": "sequence",
+		// 	"dependsOn": [
+		// 		"Debug Preprocess"
+		// 	],
+		// 	"isBackground": false,
+		// 	"detail": "运行",
+		// }
 	]
 }
