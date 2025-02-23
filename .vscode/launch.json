@@ -2,6 +2,20 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "qemu_lldb",
+			"type": "lldb",
+			"request": "launch",
+			"preLaunchTask": "debug qemu",
+			"cwd": "${workspaceFolder}/../linux/linux-6.13.2", // 无效
+			"targetCreateCommands": [
+				"target create ${workspaceFolder}/../linux/linux-6.13.2/vmlinux"
+			],
+			"processCreateCommands": [
+				"gdb-remote localhost:1234",
+				"breakpoint set -name start_kernel"
+			],
+		},
+		{
 			"name": "qemu_debug",
 			"type": "cppdbg",
 			"request": "launch",

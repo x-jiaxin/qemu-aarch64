@@ -4,7 +4,7 @@
 		{
 			"label": "run qemu",
 			"type": "shell",
-			"command": "./qemu_aarch64.sh",
+			"command": "./start_qemu_aarch64.sh",
 			"presentation": {
 				"echo": true,
 				"clear": true,
@@ -17,7 +17,7 @@
 		{
 			"label": "debug qemu",
 			"type": "shell",
-			"command": "./qemu_aarch64.sh -debug",
+			"command": "./start_qemu_aarch64.sh -debug",
 			"presentation": {
 				"echo": true,
 				"clear": true,
@@ -33,7 +33,7 @@
 			"options": {
 				"cwd": "${workspaceFolder}/"
 			},
-			"command": "./rootfs_sync_to_qemu.sh",
+			"command": "./sync_rootfs_to_qemu.sh",
 			"problemMatcher": [
 				"$gcc"
 			],
@@ -46,29 +46,12 @@
 			"options": {
 				"cwd": "${workspaceFolder}/"
 			},
-			"command": "./qemu_sync_to_rootfs.sh",
+			"command": "./sync_qemu_to_rootfs.sh",
 			"problemMatcher": [
 				"$gcc"
 			],
 			"isBackground": false,
 			"detail": "外置根目录更新",
 		},
-		// {
-		// 	"label": "Run",
-		// 	"type": "shell",
-		// 	"options": {
-		// 		"cwd": "${workspaceFolder}/"
-		// 	},
-		// 	"command": "./main",
-		// 	"problemMatcher": [
-		// 		"$gcc"
-		// 	],
-		// 	"dependsOrder": "sequence",
-		// 	"dependsOn": [
-		// 		"Debug Preprocess"
-		// 	],
-		// 	"isBackground": false,
-		// 	"detail": "运行",
-		// }
 	]
 }
